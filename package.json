@@ -1,5 +1,5 @@
 {
-  "name": "postgress",
+  "name": "invoice_",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
