@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardHeader, Alert, Row, Col, Label, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Card, CardBody, Button } from 'reactstrap';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
+import EmployeeApi from '../../serviceCalls/EmployeeApi';
 class EmployeeForm extends Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
     validSubmit = (event, values) => {
-        console.log(values);
-        axios.post("http://localhost:5006/invoice/employee", values)
-        .then((resp)=>{
-            console.log("Respo");
-            console.log(resp, resp.data);
-        })
-        .catch((error)=>{
-            this.errorHandling(error);
-        });
+        new EmployeeApi().saveEmployee(this.successCall, this.errorCall, values);
     }
 
-    errorHandling = (error) => {
+    errorCall = (error) => {
         console.log(error)
+    }
+
+    successCall (resp) {
+        console.log("I am successcall ", resp)
     }
     render() {
         return (
