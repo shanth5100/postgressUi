@@ -15,12 +15,18 @@ export const Store = {
 
     getObjectData: function (key){
         let val = DB.getItem(key)
-        let Decript = CryptoJS.AES.decrypt(val.toString(), SECRET_KEY);
-        return JSON.parse(Decript.toString(CryptoJS.enc.Utf8));
+        if (val) {
+            let Decript = CryptoJS.AES.decrypt(val.toString(), SECRET_KEY);
+            return JSON.parse(Decript.toString(CryptoJS.enc.Utf8));
+        }
+        return null;
     },
     getStringData: function (key){
         let val = DB.getItem(key)
-        let Decript = CryptoJS.AES.decrypt(val.toString(), SECRET_KEY);
-        return Decript.toString(CryptoJS.enc.Utf8);
+        if (val) {
+            let Decript = CryptoJS.AES.decrypt(val.toString(), SECRET_KEY);
+            return Decript.toString(CryptoJS.enc.Utf8);
+        }
+        return null;
     },
 }
