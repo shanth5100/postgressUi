@@ -5,6 +5,7 @@ import routes from '../Routes';
 import { Route, Switch } from "react-router-dom";
 import Sidebar from '../secure/Sidebar';
 import { Row, Col } from 'react-bootstrap';
+import EmployeeForm from '../secure/EmployeeForm';
 
 class Main extends Component {
       constructor(props) {
@@ -50,7 +51,7 @@ class Main extends Component {
     });
   };
   getRoutes = routes => {
-    console.log(routes)
+    // console.log(routes)
     return routes.map((prop, key) => {
       if (prop.layout === "/admin") {
         return (
@@ -152,7 +153,7 @@ class Main extends Component {
     }
   }
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     let brandText = this.props && this.props.location ? this.props.location.pathname : "Prashanth Brand"
     let windWidth = this.state.windowWidth < 500 ? 4: this.state.windowWidth < 750 ? 3: 2;
     return (
@@ -171,6 +172,7 @@ class Main extends Component {
           </Col>
           <main> 
               load routes
+              <EmployeeForm />
             </main>
           </Row>
           

@@ -15,7 +15,7 @@ class Sidebar extends Component {
     //   console.log(item);
     //   return 0;
     // });
-    console.log(this.props)
+    // console.log(this.props)
     let classN = this.props.className
     return (
       <div>

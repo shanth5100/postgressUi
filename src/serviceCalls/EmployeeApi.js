@@ -15,7 +15,11 @@ class EmployeeApi extends AbstractApi{
     }
 
     process(success, failure, requestUrl, requestMethod, data) {
-        let baseUrl = Config.baseUrl;
+        // let baseUrl = Config.baseUrl;
+        let envi = Config.loadEnviData();
+        console.log(envi);
+        let baseUrl = Config.loadEnviData().baseUrl;
+        // let baseUrl = Config.loadEnviData() ? Config.loadEnviData().baseUrl : null;
 
         let http = this.httpCall(requestUrl, requestMethod, baseUrl);
         let promise = null;

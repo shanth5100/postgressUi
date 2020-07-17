@@ -19,7 +19,7 @@ function App() {
       <Route path="/admin" render={props => <Main {...props} />} />
       <Route path="/admin" render={props => <Main {...props} />} />
 
-      {/* <Redirect to="/admin/dashboard" /> */}
+      <Redirect from="/" to="/admin" />
     </Switch>
   </BrowserRouter>
       {/* <Main /> */}
