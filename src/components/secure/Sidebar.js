@@ -21,8 +21,8 @@ class Sidebar extends Component {
       <div>
         {this.props.items && this.props.items.length >0 ? 
          <ul className="nav">
-         { this.props.items.map((sidebarItem)=>{
-            return <li>
+         { this.props.items.map((sidebarItem, key)=>{
+            return <li key={key}>
               <NavLink to={sidebarItem.path}>
               <i className={sidebarItem.icon}  /><span className={this.props.className}>{sidebarItem.name}</span>
               </NavLink>
@@ -36,9 +36,13 @@ class Sidebar extends Component {
 
 }
 
-Sidebar.propTypes = {
+// Sidebar.propTypes = {
+//   items: propTypes.array
+// }
+Sidebar.contextTypes = {
   items: propTypes.array
 }
+
 export default Sidebar;
 
 

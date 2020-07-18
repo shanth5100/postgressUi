@@ -22,6 +22,7 @@ let setAndReturnEnvData = function() {
         let data = {
             bgColor: "#6DB4E3",
             baseUrl: "http://localhost:5006"
+            // baseUrl: "http://invoice-git-invoice.apps.us-east-1.starter.openshift-online.com"
             // baseUrl: "https://payslip-api.herokuapp.com"
         }
         
