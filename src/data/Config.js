@@ -22,14 +22,14 @@ let setAndReturnEnvData = function() {
         let data = {
             bgColor: "#6DB4E3",
             baseUrl: "http://localhost:5006"
+            // baseUrl: "https://payslip-api.herokuapp.com"
         }
-        console.log(process.env.ENVIRONMENT);
-        if (process.env.ENVIRONMENT === "LIVE") {
+        
+        if (process.env.REACT_APP_ENVIRONMENT === "LIVE") {
             data.baseUrl = "https://payslip-api.herokuapp.com";
             data.bgColor = '#F3F2F1';
         }
         environmentData = data;
-        console.log("Environment : ", process.env.ENVIRONMENT);
         return data;
     }
 

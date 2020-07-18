@@ -28,15 +28,14 @@ class EmployeeApi extends AbstractApi{
            promise.then((response)=>{
                 if (requestMethod !== this.requestMethod.GET) {
                    this.getEmployees();
-                   if (success) {
-                       success(response.data);
-                   }
                 } else {
                     Store.storeObjectData(EMPLOYEE_LIST, response.data)
                 }
+                if (success) {
+                    success(response.data);
+                }
            })
            .catch((error)=>{
-               console.log("I am error call ", error, error.response)
                failure(error)
            });
            
